@@ -1,0 +1,21 @@
+<!-- chatbot_app/chat/Templates/chatbot.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot</title>
+</head>
+<body>
+    <h1>Chatbot</h1>
+    <div>
+        {% if user_input %}
+            <p>You: {{ user_input }}</p>
+            <p>Bot: {{ bot_response }}</p>
+        {% endif %}
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="message" placeholder="Type a message">
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>
